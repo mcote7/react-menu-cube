@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 
+import '../CSS/cube.css';
+
 import useRS from "radioactive-state";
 
-import '../CSS/cube.css';
+import CUBE_FRONT_MENU from './cube-faces/CUBE_FRONT_MENU';
 
 const CUBE_MAIN_RS = () => {
   
@@ -11,10 +13,10 @@ const CUBE_MAIN_RS = () => {
   });
 
   const handleItemSelect = (e) => {
-    console.log("1",state.currentClass)
-    console.log("next",e.target.value)
+    // console.log("1",state.currentClass)
+    // console.log("next",e.target.value)
     state.currentClass = e.target.value;
-    console.log("2",state.currentClass)
+    // console.log("2",state.currentClass)
   };
 
   useEffect(()=>{
@@ -80,7 +82,7 @@ const CUBE_MAIN_RS = () => {
       <div className="col">
         <div className="scene m-auto">
           <div className={`cube show-${state.currentClass}`}>
-            <div className="cube__face cube__face--front">front</div>
+            <CUBE_FRONT_MENU />
             <div className="cube__face cube__face--back">back</div>
             <div className="cube__face cube__face--right">right</div>
             <div className="cube__face cube__face--left">left</div>
