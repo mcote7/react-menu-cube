@@ -1,58 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../CSS/cube.css';
 
 const CUBE_MAIN = () => {
-
-  var cube = document.querySelector('.cube');
-  var radioGroup = document.querySelector('.radio-group');
-  var currentClass = '';
-
-  function changeSide() {
-    var checkedRadio = radioGroup.querySelector(':checked');
-    var showClass = 'show-' + checkedRadio.value;
-    if ( currentClass ) {
-      cube.classList.remove( currentClass );
-    }
-    cube.classList.add( showClass );
-    currentClass = showClass;
-  }
-  // set initial side
-  changeSide();
-
-  radioGroup.addEventListener( 'change', changeSide );
-
+  
+  const [currentClass, setCurrentClass] = useState('front');
 
   return (<>
-      <div class="scene">
-        <div class="cube">
-          <div class="cube__face cube__face--front">front</div>
-          <div class="cube__face cube__face--back">back</div>
-          <div class="cube__face cube__face--right">right</div>
-          <div class="cube__face cube__face--left">left</div>
-          <div class="cube__face cube__face--top">top</div>
-          <div class="cube__face cube__face--bottom">bottom</div>
+      <div className="scene">
+        <div className={`cube show-${currentClass}`}>
+          <div className="cube__face cube__face--front">front</div>
+          <div className="cube__face cube__face--back">back</div>
+          <div className="cube__face cube__face--right">right</div>
+          <div className="cube__face cube__face--left">left</div>
+          <div className="cube__face cube__face--top">top</div>
+          <div className="cube__face cube__face--bottom">bottom</div>
         </div>
       </div>
 
-      <p class="radio-group">
+      <p className="radio-group">
         <label>
-          <input type="radio" name="rotate-cube-side" value="front" checked /> front
+          <input type="radio" name="rotate-cube-side" value="front" onChange={(e)=>setCurrentClass(e.target.value)}/> front
         </label>
         <label>
-          <input type="radio" name="rotate-cube-side" value="right" /> right
+          <input type="radio" name="rotate-cube-side" value="right" onChange={(e)=>setCurrentClass(e.target.value)}/> right
         </label>
         <label>
-          <input type="radio" name="rotate-cube-side" value="back" /> back
+          <input type="radio" name="rotate-cube-side" value="back" onChange={(e)=>setCurrentClass(e.target.value)}/> back
         </label>
         <label>
-          <input type="radio" name="rotate-cube-side" value="left" /> left
+          <input type="radio" name="rotate-cube-side" value="left" onChange={(e)=>setCurrentClass(e.target.value)}/> left
         </label>
         <label>
-          <input type="radio" name="rotate-cube-side" value="top" /> top
+          <input type="radio" name="rotate-cube-side" value="top" onChange={(e)=>setCurrentClass(e.target.value)}/> top
         </label>
         <label>
-          <input type="radio" name="rotate-cube-side" value="bottom" /> bottom
+          <input type="radio" name="rotate-cube-side" value="bottom" onChange={(e)=>setCurrentClass(e.target.value)}/> bottom
         </label>
       </p>
   </>);
