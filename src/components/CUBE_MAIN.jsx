@@ -1,10 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import '../CSS/cube.css';
 
 const CUBE_MAIN = () => {
   
   const [currentClass, setCurrentClass] = useState('front');
+
+  const handleItemSelect = (e) => {
+    setCurrentClass(e.target.value);
+  };
+
+  useEffect(()=>{
+    const defaultColor = 'rgba(255, 255, 255, 0.2)'
+    const target = document.getElementsByClassName(`cube__face--${currentClass}`)[0];
+    console.log({target});
+    const style = window.getComputedStyle(target);
+    console.log({style});
+    const color = style.getPropertyValue('background-color').replace('0.7', '1');
+    console.log({color});
+    const button = document.getElementsByClassName('menu_button');
+    console.log({button});
+    for(let i = 0; i < button.length; i++) {
+      console.log('n',button[i]);
+      if(button[i].value === currentClass) {
+        button[i].style.backgroundColor = color;
+      }
+      else {button[i].style.backgroundColor = defaultColor;}
+    }
+  },[currentClass])
 
   return (<>
 
@@ -14,32 +37,32 @@ const CUBE_MAIN = () => {
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="front"
-              onClick={(e)=>setCurrentClass(e.target.value)}>front</button>
+              onClick={(e)=>handleItemSelect(e)}>front</button>
             </span>
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="right"
-              onClick={(e)=>setCurrentClass(e.target.value)}>right</button>
+              onClick={(e)=>handleItemSelect(e)}>right</button>
             </span>
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="back"
-              onClick={(e)=>setCurrentClass(e.target.value)}>back</button>
+              onClick={(e)=>handleItemSelect(e)}>back</button>
             </span>
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="left"
-              onClick={(e)=>setCurrentClass(e.target.value)}>left</button>
+              onClick={(e)=>handleItemSelect(e)}>left</button>
             </span>
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="top"
-              onClick={(e)=>setCurrentClass(e.target.value)}>top</button>
+              onClick={(e)=>handleItemSelect(e)}>top</button>
             </span>
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="bottom"
-              onClick={(e)=>setCurrentClass(e.target.value)}>bottom</button>
+              onClick={(e)=>handleItemSelect(e)}>bottom</button>
             </span>
 
         </div>
