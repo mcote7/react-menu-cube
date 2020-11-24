@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-menu-cube/static/css/main.9419dd9b.chunk.css",
+    "main.css": "/react-menu-cube/static/css/main.59066a08.chunk.css",
     "main.js": "/react-menu-cube/static/js/main.3cfe46a1.chunk.js",
     "main.js.map": "/react-menu-cube/static/js/main.3cfe46a1.chunk.js.map",
     "runtime-main.js": "/react-menu-cube/static/js/runtime-main.83fce29f.js",
@@ -12,7 +12,7 @@
     "static/js/3.63f19046.chunk.js.map": "/react-menu-cube/static/js/3.63f19046.chunk.js.map",
     "index.html": "/react-menu-cube/index.html",
     "static/css/2.43b2b750.chunk.css.map": "/react-menu-cube/static/css/2.43b2b750.chunk.css.map",
-    "static/css/main.9419dd9b.chunk.css.map": "/react-menu-cube/static/css/main.9419dd9b.chunk.css.map",
+    "static/css/main.59066a08.chunk.css.map": "/react-menu-cube/static/css/main.59066a08.chunk.css.map",
     "static/js/2.cb47bbc4.chunk.js.LICENSE.txt": "/react-menu-cube/static/js/2.cb47bbc4.chunk.js.LICENSE.txt",
     "static/media/cube.css": "/react-menu-cube/static/media/deep-blue.e4dffac8.gif"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.83fce29f.js",
     "static/css/2.43b2b750.chunk.css",
     "static/js/2.cb47bbc4.chunk.js",
-    "static/css/main.9419dd9b.chunk.css",
+    "static/css/main.59066a08.chunk.css",
     "static/js/main.3cfe46a1.chunk.js"
   ]
 }
