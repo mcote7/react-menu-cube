@@ -20,7 +20,11 @@ const CUBE_MAIN_RS = () => {
   };
 
   useEffect(()=>{
-    const defaultColor = 'rgba(255, 255, 255, 0.2)'
+
+    const defaultColor = 'rgba(255, 255, 255, 0.2)';
+    const defaultBorderColor = 'rgba(255, 255, 255, 0.3)';
+    const defaultTextColor = 'rgba(255, 255, 255,1)';
+
     const target = document.getElementsByClassName(`cube__face--${state.currentClass}`)[0];
     // console.log({target});
     const style = window.getComputedStyle(target);
@@ -33,8 +37,14 @@ const CUBE_MAIN_RS = () => {
       // console.log('n',button[i]);
       if(button[i].value === state.currentClass) {
         button[i].style.backgroundColor = color;
+        button[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
+        button[i].style.color = 'rgba(0,0,0,1)';
       }
-      else {button[i].style.backgroundColor = defaultColor;}
+      else {
+        button[i].style.backgroundColor = defaultColor;
+        button[i].style.borderColor = defaultBorderColor;
+        button[i].style.color = defaultTextColor;
+      }
     }
   },[state.currentClass])
 
@@ -49,6 +59,7 @@ const CUBE_MAIN_RS = () => {
               onClick={(e)=>handleItemSelect(e)}>front</button>
             </span>
 
+            {/*  */}
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="right"
               onClick={(e)=>handleItemSelect(e)}>right</button>
