@@ -2,7 +2,10 @@
   width: 300px;
   height: 300px;
   perspective: 300px;
-  -webkit-box-reflect: below 0px linear-gradient(transparent, rgba(255, 255, 255, 0.25));
+  -webkit-box-reflect: below 20px linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.3));
 }
 
 .cube {
@@ -11,7 +14,7 @@
   position: relative;
   transform-style: preserve-3d;
   transform: translateZ(-150px);
-  transition: transform 2s;
+  transition: transform 1.5s;
 }
 
 .cube__face {
@@ -22,7 +25,6 @@
   line-height: 300px;
   font-size: 40px;
   font-weight: bold;
-  /* color: white; */
 }
 
 label { margin-right: 10px; }
@@ -30,12 +32,12 @@ label { margin-right: 10px; }
 /* --- */
 
 
-.cube__face--front  { background: hsla(  0, 100%, 50%, 0.6); }
-.cube__face--right  { background: hsla( 60, 100%, 50%, 0.6); }
-.cube__face--back   { background: hsla(120, 100%, 50%, 0.6); }
-.cube__face--left   { background: hsla(180, 100%, 50%, 0.6); }
-.cube__face--top    { background: hsla(240, 100%, 50%, 0.6); }
-.cube__face--bottom { background: hsla(300, 100%, 50%, 0.6); }
+.cube__face--front  { background: hsla(  0, 100%, 50%, 0.7); }
+.cube__face--right  { background: hsla( 60, 100%, 50%, 0.7); }
+.cube__face--back   { background: hsla(120, 100%, 50%, 0.7); }
+.cube__face--left   { background: hsla(180, 100%, 50%, 0.7); }
+.cube__face--top    { background: hsla(240, 100%, 50%, 0.7); }
+.cube__face--bottom { background: hsla(300, 100%, 50%, 0.7); }
 
 
 /* --- */
@@ -57,3 +59,15 @@ label { margin-right: 10px; }
 .cube.show-bottom { transform: translateZ(-150px) rotateX(  90deg); }
 
 /* --- */
+
+.water {
+  background-image: url('../image/deep-blue.gif');
+  position: relative;
+  z-index: -1982;
+  height: 300px;
+  width: 300px;
+  top: 20px;
+  left: 0px;
+  opacity: 0.25;
+  mask-image: radial-gradient(rgb(0,0,0,0.85), rgb(0,0,0,0));
+}

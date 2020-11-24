@@ -8,7 +8,7 @@ const CUBE_MAIN = () => {
 
   return (<>
 
-    <div className="row my-5">
+    <div className="row mt-1 mb-2">
       <div className="col">
         <div className="radio-group">
           <label>
@@ -44,6 +44,7 @@ const CUBE_MAIN = () => {
             <div className="cube__face cube__face--top">top</div>
             <div className="cube__face cube__face--bottom">bottom</div>
           </div>
+          <div className="water"></div>
         </div>
       </div>
     </div>
