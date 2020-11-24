@@ -4,7 +4,7 @@ import CUBE_MAIN from './components/CUBE_MAIN';
 
 const App = () => {
   return (
-    <div className="App container-fluid center_all full_screen">
+    <div className="App container-fluid">
       <CUBE_MAIN/>
     </div>
   );
