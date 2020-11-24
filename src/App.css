@@ -2,11 +2,11 @@
   text-align: center;
 }
 
-.center_all {
+/* .center_all {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* .full_screen {
   height: 100vh;
