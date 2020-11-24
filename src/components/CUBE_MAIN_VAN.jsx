@@ -7,24 +7,24 @@ const CUBE_MAIN = () => {
   const [currentClass, setCurrentClass] = useState('front');
 
   const handleItemSelect = (e) => {
-    console.log("1",{currentClass});
+    console.log("1",currentClass);
     console.log("next",e.target.value)
     setCurrentClass(e.target.value);
-    console.log("2",{currentClass});
+    console.log("2",currentClass);
   };
 
   useEffect(()=>{
     const defaultColor = 'rgba(255, 255, 255, 0.2)'
     const target = document.getElementsByClassName(`cube__face--${currentClass}`)[0];
-    console.log({target});
+    // console.log({target});
     const style = window.getComputedStyle(target);
-    console.log({style});
+    // console.log({style});
     const color = style.getPropertyValue('background-color').replace('0.7', '1');
-    console.log({color});
+    // console.log({color});
     const button = document.getElementsByClassName('menu_button');
-    console.log({button});
+    // console.log({button});
     for(let i = 0; i < button.length; i++) {
-      console.log('n',button[i]);
+      // console.log('n',button[i]);
       if(button[i].value === currentClass) {
         button[i].style.backgroundColor = color;
       }
