@@ -72,3 +72,15 @@ label { margin-right: 10px; }
   opacity: 0.25;
   mask-image: radial-gradient(rgb(0,0,0,0.85), rgb(0,0,0,0));
 }
+
+.menu_button {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  background-color: white;
+  color: rgb(0,0,0,0.85);
+}
+.menu_button:focus, .menu_button:active {
+  outline: none!important;
+  box-shadow: none!important;
+}

@@ -11,24 +11,37 @@ const CUBE_MAIN = () => {
     <div className="row mt-1 mb-2">
       <div className="col">
         <div className="radio-group">
-          <label>
-            <input type="radio" name="rotate-cube-side" value="front" onChange={(e)=>setCurrentClass(e.target.value)}/> front
-          </label>
-          <label>
-            <input type="radio" name="rotate-cube-side" value="right" onChange={(e)=>setCurrentClass(e.target.value)}/> right
-          </label>
-          <label>
-            <input type="radio" name="rotate-cube-side" value="back" onChange={(e)=>setCurrentClass(e.target.value)}/> back
-          </label>
-          <label>
-            <input type="radio" name="rotate-cube-side" value="left" onChange={(e)=>setCurrentClass(e.target.value)}/> left
-          </label>
-          <label>
-            <input type="radio" name="rotate-cube-side" value="top" onChange={(e)=>setCurrentClass(e.target.value)}/> top
-          </label>
-          <label>
-            <input type="radio" name="rotate-cube-side" value="bottom" onChange={(e)=>setCurrentClass(e.target.value)}/> bottom
-          </label>
+
+            <span>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="front"
+              onClick={(e)=>setCurrentClass(e.target.value)}>front</button>
+            </span>
+
+            <span>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="right"
+              onClick={(e)=>setCurrentClass(e.target.value)}>right</button>
+            </span>
+
+            <span>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="back"
+              onClick={(e)=>setCurrentClass(e.target.value)}>back</button>
+            </span>
+
+            <span>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="left"
+              onClick={(e)=>setCurrentClass(e.target.value)}>left</button>
+            </span>
+
+            <span>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="top"
+              onClick={(e)=>setCurrentClass(e.target.value)}>top</button>
+            </span>
+
+            <span>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="bottom"
+              onClick={(e)=>setCurrentClass(e.target.value)}>bottom</button>
+            </span>
+
         </div>
       </div>
     </div>
