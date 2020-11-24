@@ -7,7 +7,10 @@ const CUBE_MAIN = () => {
   const [currentClass, setCurrentClass] = useState('front');
 
   const handleItemSelect = (e) => {
+    console.log("1",{currentClass});
+    console.log("next",e.target.value)
     setCurrentClass(e.target.value);
+    console.log("2",{currentClass});
   };
 
   useEffect(()=>{
