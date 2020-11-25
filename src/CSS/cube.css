@@ -120,12 +120,17 @@
 .play-cube:hover {
   animation: play-cube-spin 750ms steps(1000);
 }
+@media only screen and (max-width: 450px) {
+  .play-cube:hover {
+    animation: none;
+  }
+}
 .play-cube:focus, .play-cube:active {
   outline: none!important;
   color: white!important;
 }
 @keyframes play-cube-spin {
-  from {transform: rotate(0deg) scale(1); bottom: 20px;}
-  50% {transform: rotate(180deg) scale(2); bottom: 35px;}
-  to {transform: rotate(360deg) scale(1); bottom: 20px;}
+  from {transform: rotate(0deg) scale(1); margin-bottom: 0px;}
+  50% {transform: rotate(180deg) scale(2); margin-bottom: 20px;}
+  to {transform: rotate(360deg) scale(1); margin-bottom: 0px;}
 }

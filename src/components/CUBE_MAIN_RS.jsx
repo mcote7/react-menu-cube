@@ -58,6 +58,14 @@ const CUBE_MAIN_RS = () => {
   const playCube = () => {
     const play = document.getElementById('play');
     play.style.color = 'white';
+    play.animate([
+      {transform: 'rotate(0deg) scale(1)', marginBottom: '0px'},
+      {transform: 'rotate(180deg) scale(2)', marginBottom: '150px'},
+      {transform: 'rotate(360deg) scale(1)', marginBottom: '0px'},
+    ], {
+      duration: 2000,
+      easing: 'steps(1000)'
+    });
     setTimeout(() => {
       const classes = ['menu', 'right', 'back', 'left', 'top', 'bottom'];
         for(let i = 0; i < classes.length; i++) {
@@ -80,7 +88,6 @@ const CUBE_MAIN_RS = () => {
   // -- LINTER DISSABLED FOR RADIOACTIVE STATE -
 
   return (<>
-
     <div className="row mt-5">
       <div className="col">
         <div className="scene m-auto">
@@ -101,5 +108,4 @@ const CUBE_MAIN_RS = () => {
     </div>
   </>);
 };
-
 export default CUBE_MAIN_RS;
