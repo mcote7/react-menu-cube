@@ -81,8 +81,8 @@
 /* --- menu buttons --- */
 
 .menu_button {
-  /* -webkit-user-select: none;
-  user-select: none; */
+  -webkit-user-select: none;
+  user-select: none;
   padding: 0px!important;
   position: relative;
   height: 60px;
@@ -111,8 +111,8 @@
 /* --- LOCATION TAG */
 
 .item-location {
-  /* -webkit-user-select: none;
-  user-select: none; */
+  -webkit-user-select: none;
+  user-select: none;
   position: absolute;
   bottom: 0px;
 }
@@ -147,8 +147,8 @@
 /* --- sign */
 
 #sign {
-  /* -webkit-user-select: none;
-  user-select: none; */
+  -webkit-user-select: none;
+  user-select: none;
   display: flex;
   position: absolute;
   bottom: 20px;
