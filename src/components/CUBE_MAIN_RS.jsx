@@ -51,21 +51,25 @@ const CUBE_MAIN_RS = () => {
     }
   },[state.currentClass]);
 
-  // -- OPENING ENTERANCE --->
-  useEffect(()=>{
+  // -- PLAY CUBE --->
+  const playCube = () => {
     setTimeout(() => {
-      const buttons = document.getElementsByClassName('menu_button');
-      // console.log('buttons',buttons)
-        for(let i = 0; i < buttons.length-4; i++) {
+      const classes = ['menu', 'right', 'back', 'left', 'top', 'bottom'];
+        for(let i = 0; i < classes.length; i++) {
         setTimeout(() => {
-          state.currentClass = buttons[i].value;
-          // console.log('button[i] val',buttons[i].value)
+          state.currentClass = classes[i];
+          console.log('classes[i]',classes[i])
         }, i * 1000);
       }
     }, 250);
     setTimeout(() => {
       state.currentClass = 'menu';
     }, 6250);
+  };
+
+  // -- OPENING ENTERANCE --->
+  useEffect(()=>{
+    playCube();
   },[]);// eslint-disable-line
   // -- LINTER DISSABLED FOR RADIOACTIVE STATE -
 
