@@ -67,7 +67,7 @@ const CUBE_MAIN_RS = () => {
       {transform: 'rotate(180deg) scale(2)', marginBottom: '150px'},
       {transform: 'rotate(360deg) scale(1)', marginBottom: '0px'},
     ], {
-      duration: 2000,
+      duration: 1500,
       easing: 'steps(1000)'
     });
     setTimeout(() => {
