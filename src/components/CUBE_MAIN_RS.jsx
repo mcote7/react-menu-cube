@@ -36,12 +36,15 @@ const CUBE_MAIN_RS = () => {
     // console.log({color})
     const button = document.getElementsByClassName('menu_button');
     // console.log({button})
+    const play = document.getElementById('play');
+
     for(let i = 0; i < button.length; i++) {
       // console.log('n',button[i])
       if(button[i].value === state.currentClass) {
         button[i].style.backgroundColor = color;
         button[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
         button[i].style.color = 'rgba(0,0,0,1)';
+        play.style.color = color;
       }
       else {
         button[i].style.backgroundColor = defaultColor;
@@ -53,18 +56,21 @@ const CUBE_MAIN_RS = () => {
 
   // -- PLAY CUBE --->
   const playCube = () => {
+    const play = document.getElementById('play');
+    play.style.color = 'white';
     setTimeout(() => {
       const classes = ['menu', 'right', 'back', 'left', 'top', 'bottom'];
         for(let i = 0; i < classes.length; i++) {
         setTimeout(() => {
           state.currentClass = classes[i];
-          console.log('classes[i]',classes[i])
-        }, i * 1000);
+          // console.log('classes[i]',classes[i])
+        }, i * 1250);
       }
     }, 250);
     setTimeout(() => {
       state.currentClass = 'menu';
-    }, 6250);
+    }, 7750);
+    // console.log("done!")
   };
 
   // -- OPENING ENTERANCE --->
@@ -89,6 +95,9 @@ const CUBE_MAIN_RS = () => {
           <div className="water"></div>
         </div>
       </div>
+    </div>
+    <div onClick={playCube} className="play-cube">
+      <span id="play"><i class="fa fa-cube fa-2x" aria-hidden="true"></i></span>
     </div>
   </>);
 };

@@ -9,7 +9,7 @@
     transparent,
     rgba(255, 255, 255, 0.3));
   position: relative;
-  animation: present-cube 8s ease-out;
+  animation: present-cube 7750ms ease-out;
 }
 @keyframes present-cube {
   0% {opacity: 0; transform: scale(0); filter: blur(12px);}
@@ -106,4 +106,26 @@
 .item-location {
   position: absolute;
   bottom: 0px;
+}
+
+/* --- PLAY CUBE BUTTON */
+
+.play-cube {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+.play-cube:hover {
+  animation: play-cube-spin 750ms steps(1000);
+}
+.play-cube:focus, .play-cube:active {
+  outline: none!important;
+  color: white!important;
+}
+@keyframes play-cube-spin {
+  from {transform: rotate(0deg) scale(1); bottom: 20px;}
+  50% {transform: rotate(180deg) scale(2); bottom: 35px;}
+  to {transform: rotate(360deg) scale(1); bottom: 20px;}
 }
