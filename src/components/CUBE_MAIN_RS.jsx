@@ -5,6 +5,7 @@ import '../CSS/cube.css';
 import useRS from "radioactive-state";
 
 import CUBE_FRONT_MENU from './cube-faces/CUBE_FRONT_MENU';
+import CUBE_SIDE_ITEM from './cube-faces/CUBE_SIDE_ITEM';
 
 const CUBE_MAIN_RS = () => {
   
@@ -68,32 +69,16 @@ const CUBE_MAIN_RS = () => {
 
   return (<>
 
-    <div className="row mt-1 mb-2">
-      <div className="col">
-
-
-            <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="menu"
-              onClick={(e)=>handleItemSelect(e)}>menu</button>
-            </span>
-
-          {/*  */}
-
-          {/*  */}
-
-      </div>
-    </div>
-
-    <div className="row">
+    <div className="row mt-5">
       <div className="col">
         <div className="scene m-auto">
           <div className={`cube show-${state.currentClass}`}>
             <CUBE_FRONT_MENU handleItemSelect={handleItemSelect}/>
-            <div className="cube__face cube__face--back">back</div>
-            <div className="cube__face cube__face--right">right</div>
-            <div className="cube__face cube__face--left">left</div>
-            <div className="cube__face cube__face--top">top</div>
-            <div className="cube__face cube__face--bottom">bottom</div>
+            <CUBE_SIDE_ITEM side={'back'} handleItemSelect={handleItemSelect}/>
+            <CUBE_SIDE_ITEM side={'right'} handleItemSelect={handleItemSelect}/>
+            <CUBE_SIDE_ITEM side={'left'} handleItemSelect={handleItemSelect}/>
+            <CUBE_SIDE_ITEM side={'top'} handleItemSelect={handleItemSelect}/>
+            <CUBE_SIDE_ITEM side={'bottom'} handleItemSelect={handleItemSelect}/>
           </div>
           <div className="water"></div>
         </div>
