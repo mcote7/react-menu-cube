@@ -55,8 +55,8 @@ const CUBE_MAIN_RS = () => {
   useEffect(()=>{
     setTimeout(() => {
       const buttons = document.getElementsByClassName('menu_button');
-      // console.log('buttons len',buttons.length)
-        for(let i = 0; i < buttons.length; i++) {
+      // console.log('buttons',buttons)
+        for(let i = 0; i < buttons.length-4; i++) {
         setTimeout(() => {
           state.currentClass = buttons[i].value;
           // console.log('button[i] val',buttons[i].value)
