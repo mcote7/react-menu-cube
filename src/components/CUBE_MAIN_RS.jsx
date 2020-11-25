@@ -70,40 +70,17 @@ const CUBE_MAIN_RS = () => {
 
     <div className="row mt-1 mb-2">
       <div className="col">
-        <div className="button-group">
+
 
             <span>
               <button className="m-3 menu_button" name="rotate-cube-side" value="menu"
               onClick={(e)=>handleItemSelect(e)}>menu</button>
             </span>
 
-            {/*  */}
-            <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="right"
-              onClick={(e)=>handleItemSelect(e)}>right</button>
-            </span>
+          {/*  */}
 
-            <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="back"
-              onClick={(e)=>handleItemSelect(e)}>back</button>
-            </span>
+          {/*  */}
 
-            <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="left"
-              onClick={(e)=>handleItemSelect(e)}>left</button>
-            </span>
-
-            <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="top"
-              onClick={(e)=>handleItemSelect(e)}>top</button>
-            </span>
-
-            <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="bottom"
-              onClick={(e)=>handleItemSelect(e)}>bottom</button>
-            </span>
-
-        </div>
       </div>
     </div>
 
@@ -111,7 +88,7 @@ const CUBE_MAIN_RS = () => {
       <div className="col">
         <div className="scene m-auto">
           <div className={`cube show-${state.currentClass}`}>
-            <CUBE_FRONT_MENU />
+            <CUBE_FRONT_MENU handleItemSelect={handleItemSelect}/>
             <div className="cube__face cube__face--back">back</div>
             <div className="cube__face cube__face--right">right</div>
             <div className="cube__face cube__face--left">left</div>
