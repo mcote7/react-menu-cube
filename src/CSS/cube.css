@@ -1,3 +1,5 @@
+/* --- main --- */
+
 .scene {
   width: 300px;
   height: 300px;
@@ -32,9 +34,7 @@
   border-radius: 0.2rem;
 }
 
-label { margin-right: 10px; }
-
-/* --- */
+/* --- sides color --- */
 
 
 .cube__face--menu  { background: hsla(  0, 100%, 50%, 0.7); }
@@ -63,7 +63,7 @@ label { margin-right: 10px; }
 .cube.show-top    { transform: translateZ(-150px) rotateX( -90deg); }
 .cube.show-bottom { transform: translateZ(-150px) rotateX(  90deg); }
 
-/* --- */
+/* --- gif --- */
 
 .water {
   background-image: url('../image/deep-blue.gif');
@@ -76,6 +76,8 @@ label { margin-right: 10px; }
   opacity: 0.25;
   mask-image: radial-gradient(rgb(0,0,0,0.85), rgb(0,0,0,0));
 }
+
+/* --- menu buttons --- */
 
 .menu_button {
   position: relative;
@@ -93,3 +95,5 @@ label { margin-right: 10px; }
   outline: none!important;
   box-shadow: none!important;
 }
+
+/* --- */
