@@ -21,7 +21,7 @@ const CUBE_MAIN_RS = () => {
     // console.log("2",state.currentClass)
   };
 
-  // -- CHANGE BUTTON COLOR --->
+  // -- CHANGE COLORs --->
   useEffect(()=>{
 
     const defaultColor = 'rgba(255, 255, 255, 0.2)';
@@ -37,6 +37,7 @@ const CUBE_MAIN_RS = () => {
     const button = document.getElementsByClassName('menu_button');
     // console.log({button})
     const play = document.getElementById('play');
+    const sign = document.getElementById('sign');
 
     for(let i = 0; i < button.length; i++) {
       // console.log('n',button[i])
@@ -45,6 +46,7 @@ const CUBE_MAIN_RS = () => {
         button[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
         button[i].style.color = 'rgba(0,0,0,1)';
         play.style.color = color;
+        sign.style.color = color;
       }
       else {
         button[i].style.backgroundColor = defaultColor;
@@ -58,6 +60,8 @@ const CUBE_MAIN_RS = () => {
   const playCube = () => {
     const play = document.getElementById('play');
     play.style.color = 'white';
+    const sign = document.getElementById('sign');
+    sign.style.color = 'white';
     play.animate([
       {transform: 'rotate(0deg) scale(1)', marginBottom: '0px'},
       {transform: 'rotate(180deg) scale(2)', marginBottom: '150px'},
@@ -106,6 +110,7 @@ const CUBE_MAIN_RS = () => {
     <div onClick={playCube} className="play-cube">
       <span id="play"><i class="fa fa-cube fa-2x" aria-hidden="true"></i></span>
     </div>
+    <div id="sign">Michael Cote 2021</div>
   </>);
 };
 export default CUBE_MAIN_RS;

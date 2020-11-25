@@ -134,3 +134,13 @@
   50% {transform: rotate(180deg) scale(2); margin-bottom: 20px;}
   to {transform: rotate(360deg) scale(1); margin-bottom: 0px;}
 }
+
+/* --- sign */
+
+#sign {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: x-small;
+}
