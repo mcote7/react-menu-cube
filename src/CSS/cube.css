@@ -81,8 +81,8 @@
 /* --- menu buttons --- */
 
 .menu_button {
-  -webkit-user-select: none;
-  user-select: none;
+  /* -webkit-user-select: none;
+  user-select: none; */
   padding: 0px!important;
   position: relative;
   height: 60px;
@@ -95,7 +95,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   color: rgb(255, 255, 255);
   /* backface-visibility: hidden; */
-  -webkit-font-smoothing: subpixel-antialiased;
+  /* -webkit-font-smoothing: subpixel-antialiased; */
   will-change: transform;
   transition: 0.5s;
 }
@@ -111,8 +111,8 @@
 /* --- LOCATION TAG */
 
 .item-location {
-  -webkit-user-select: none;
-  user-select: none;
+  /* -webkit-user-select: none;
+  user-select: none; */
   position: absolute;
   bottom: 0px;
 }
@@ -147,14 +147,14 @@
 /* --- sign */
 
 #sign {
-  -webkit-user-select: none;
-  user-select: none;
+  /* -webkit-user-select: none;
+  user-select: none; */
   display: flex;
   position: absolute;
   bottom: 20px;
   right: 20px;
   font-size: x-small;
   font-weight: bolder;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
+  /* backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased; */
 }
