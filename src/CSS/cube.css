@@ -96,11 +96,11 @@
   color: rgb(255, 255, 255);
   /* backface-visibility: hidden; */
   /* -webkit-font-smoothing: subpixel-antialiased; */
-  will-change: transform;
+  /* will-change: transform; */
   transition: 0.5s;
 }
 .menu_button:hover {
-  transform: scale(1.25)!important;
+  /* transform: scale(1.25)!important; */
   color: rgba(0,0,0,1)!important;
 }
 .menu_button:focus, .menu_button:active {
