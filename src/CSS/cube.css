@@ -81,6 +81,7 @@
 /* --- menu buttons --- */
 
 .menu_button {
+  padding: 0px!important;
   position: relative;
   height: 60px;
   width: 60px;
@@ -91,9 +92,13 @@
   font-weight: bolder;
   background-color: rgba(255, 255, 255, 0.2);
   color: rgb(255, 255, 255);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  will-change: transform;
   transition: 0.5s;
 }
 .menu_button:hover {
+  transform: scale(1.25)!important;
   color: rgba(0,0,0,1)!important;
 }
 .menu_button:focus, .menu_button:active {
@@ -143,4 +148,7 @@
   bottom: 20px;
   right: 20px;
   font-size: x-small;
+  font-weight: bolder;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 }

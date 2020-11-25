@@ -42,6 +42,7 @@ const CUBE_MAIN_RS = () => {
     for(let i = 0; i < button.length; i++) {
       // console.log('n',button[i])
       if(button[i].value === state.currentClass) {
+        button[i].style.transform = 'scale(1.25)';
         button[i].style.backgroundColor = color;
         button[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
         button[i].style.color = 'rgba(0,0,0,1)';
@@ -49,6 +50,7 @@ const CUBE_MAIN_RS = () => {
         sign.style.color = color;
       }
       else {
+        button[i].style.transform = 'scale(1)';
         button[i].style.backgroundColor = defaultColor;
         button[i].style.borderColor = defaultBorderColor;
         button[i].style.color = defaultTextColor;
@@ -108,7 +110,7 @@ const CUBE_MAIN_RS = () => {
       </div>
     </div>
     <div onClick={playCube} className="play-cube">
-      <span id="play"><i class="fa fa-cube fa-2x" aria-hidden="true"></i></span>
+      <span id="play"><i className="fa fa-cube fa-2x" aria-hidden="true"></i></span>
     </div>
     <div id="sign">Michael Cote 2021</div>
   </>);
