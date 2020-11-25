@@ -29,15 +29,15 @@ const CUBE_MAIN_RS = () => {
     const defaultTextColor = 'rgba(255, 255, 255,1)';
 
     const target = document.getElementsByClassName(`cube__face--${state.currentClass}`)[0];
-    // console.log({target});
+    // console.log({target})
     const style = window.getComputedStyle(target);
-    // console.log({style});
+    // console.log({style})
     const color = style.getPropertyValue('background-color').replace('0.7', '1');
-    // console.log({color});
+    // console.log({color})
     const button = document.getElementsByClassName('menu_button');
-    // console.log({button});
+    // console.log({button})
     for(let i = 0; i < button.length; i++) {
-      // console.log('n',button[i]);
+      // console.log('n',button[i])
       if(button[i].value === state.currentClass) {
         button[i].style.backgroundColor = color;
         button[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
@@ -55,9 +55,11 @@ const CUBE_MAIN_RS = () => {
   useEffect(()=>{
     setTimeout(() => {
       const buttons = document.getElementsByClassName('menu_button');
+      // console.log('buttons len',buttons.length)
         for(let i = 0; i < buttons.length; i++) {
         setTimeout(() => {
           state.currentClass = buttons[i].value;
+          // console.log('button[i] val',buttons[i].value)
         }, i * 1000);
       }
     }, 250);

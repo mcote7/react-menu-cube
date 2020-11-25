@@ -7,6 +7,9 @@ const CUBE_SIDE_ITEM = ({side, handleItemSelect}) => {
         <button className="m-3 menu_button" name="rotate-cube-side" value="menu"
         onClick={(e)=>handleItemSelect(e)}>menu</button>
       </span>
+      <span>
+        {`@-${side}`}
+      </span>
     </div>
   );
 }
