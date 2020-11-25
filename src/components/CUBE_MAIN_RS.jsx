@@ -9,9 +9,10 @@ import CUBE_FRONT_MENU from './cube-faces/CUBE_FRONT_MENU';
 const CUBE_MAIN_RS = () => {
   
   const state = useRS({
-    currentClass: 'front'
+    currentClass: 'menu'
   });
 
+  // -- CHANGE SIDES --->
   const handleItemSelect = (e) => {
     // console.log("1",state.currentClass)
     // console.log("next",e.target.value)
@@ -19,6 +20,7 @@ const CUBE_MAIN_RS = () => {
     // console.log("2",state.currentClass)
   };
 
+  // -- CHANGE BUTTON COLOR --->
   useEffect(()=>{
 
     const defaultColor = 'rgba(255, 255, 255, 0.2)';
@@ -46,7 +48,23 @@ const CUBE_MAIN_RS = () => {
         button[i].style.color = defaultTextColor;
       }
     }
-  },[state.currentClass])
+  },[state.currentClass]);
+
+  // -- OPENING ENTERANCE --->
+  useEffect(()=>{
+    setTimeout(() => {
+      const buttons = document.getElementsByClassName('menu_button');
+        for(let i = 0; i < buttons.length; i++) {
+        setTimeout(() => {
+          state.currentClass = buttons[i].value;
+        }, i * 1000);
+      }
+    }, 250);
+    setTimeout(() => {
+      state.currentClass = 'menu';
+    }, 6250);
+  },[]);// eslint-disable-line
+  // -- LINTER DISSABLED FOR RADIOACTIVE STATE -
 
   return (<>
 
@@ -55,8 +73,8 @@ const CUBE_MAIN_RS = () => {
         <div className="button-group">
 
             <span>
-              <button className="m-3 menu_button" name="rotate-cube-side" value="front"
-              onClick={(e)=>handleItemSelect(e)}>front</button>
+              <button className="m-3 menu_button" name="rotate-cube-side" value="menu"
+              onClick={(e)=>handleItemSelect(e)}>menu</button>
             </span>
 
             {/*  */}
