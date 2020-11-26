@@ -12,6 +12,7 @@ const CUBE_MAIN_RS = () => {
   const state = useRS({
     currentClass: 'menu',
     darkMode: true,
+    playing: false,
   });
 
   // -- CHANGE SIDES --->
@@ -46,6 +47,7 @@ const CUBE_MAIN_RS = () => {
       if(ALL_BUTTONS[i].value === state.currentClass) {
         ALL_BUTTONS[i].style.backgroundColor = CUBE_FACE_backgroundColor;
         ALL_BUTTONS[i].style.borderColor = 'rgba(255, 255, 255, 1)';
+        ALL_BUTTONS[i].style.borderRadius = '0.2rem';
         ALL_BUTTONS[i].style.color = 'rgba(255, 255, 255, 1)';
         play.style.color = CUBE_FACE_backgroundColor;
         sign.style.color = CUBE_FACE_backgroundColor;
@@ -55,12 +57,15 @@ const CUBE_MAIN_RS = () => {
         ALL_BUTTONS[i].style.backgroundColor = BUTTON_defaultBackgroundColor;
         ALL_BUTTONS[i].style.borderColor = BUTTON_defaultBorderColor;
         ALL_BUTTONS[i].style.color = BUTTON_defaultTextColor;
+        ALL_BUTTONS[i].style.borderRadius = '50%';
       }
     }
   },[state.currentClass]);
 
   // -- PLAY CUBE --->
   const playCube = () => {
+
+    state.playing = true;
 
     const play = document.getElementById('play');
     const sign = document.getElementById('sign');
@@ -88,7 +93,6 @@ const CUBE_MAIN_RS = () => {
       easing: 'steps(1500)'
     });
 
-
     const classes = ['menu', 'right', 'back', 'left', 'top', 'bottom'];
       for(let i = 0; i < classes.length; i++) {
       setTimeout(() => {
@@ -99,9 +103,11 @@ const CUBE_MAIN_RS = () => {
 
     setTimeout(() => {
       state.currentClass = 'menu';
+      state.playing = false;
     }, 7700);
     // console.log("done!")
   };
+
 
   // -- OPENING ENTERANCE --->
   useEffect(()=>{
