@@ -30,12 +30,31 @@ const CUBE_MAIN_RS = () => {
     const BUTTON_defaultBorderColor = 'rgba(255, 255, 255, 0.3)';
     const BUTTON_defaultTextColor = 'rgba(255, 255, 255, 0.5)';
 
-    const CUBE_FACE_target = document.getElementsByClassName(`cube__face--${state.currentClass}`)[0];
-    // console.log({CUBE_FACE_target})
-    const CUBE_FACE_style = window.getComputedStyle(CUBE_FACE_target);
-    // console.log({CUBE_FACE_style})
-    const CUBE_FACE_backgroundColor = CUBE_FACE_style.getPropertyValue('background-color').replace('0.7', '1');
-    // console.log({CUBE_FACE_backgroundColor})
+    let CUBE_FACE_backgroundColor = '';
+    switch (state.currentClass) {
+      case 'menu':
+        CUBE_FACE_backgroundColor = 'hsla(  0, 100%, 50%, 1)';
+        break;
+      case 'right':
+        CUBE_FACE_backgroundColor = 'hsla( 60, 100%, 50%, 1)';
+        break;
+      case 'back':
+        CUBE_FACE_backgroundColor = 'hsla(120, 100%, 50%, 1)';
+        break;
+      case 'left':
+        CUBE_FACE_backgroundColor = 'hsla(180, 100%, 50%, 1)';
+        break;
+      case 'top':
+        CUBE_FACE_backgroundColor = 'hsla(240, 100%, 50%, 1)';
+        break;
+      case 'bottom':
+        CUBE_FACE_backgroundColor = 'hsla(300, 100%, 50%, 1)';
+        break;
+      default:
+        CUBE_FACE_backgroundColor = 'hsla(  0, 100%, 50%, 1)';
+    }
+    console.log({CUBE_FACE_backgroundColor})
+    
     const ALL_BUTTONS = document.getElementsByClassName('menu_button');
     // console.log({ALL_BUTTONS})
     const play = document.getElementById('play');
@@ -98,13 +117,13 @@ const CUBE_MAIN_RS = () => {
       setTimeout(() => {
         state.currentClass = classes[i];
         // console.log('classes[i]',classes[i])
-      }, i * 1200);
+      }, i * 1250);
     }
 
     setTimeout(() => {
       state.currentClass = 'menu';
       state.playing = false;
-    }, 7700);
+    }, 7750);
     // console.log("done!")
   };
 
