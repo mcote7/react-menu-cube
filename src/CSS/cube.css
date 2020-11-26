@@ -74,7 +74,7 @@
   width: 300px;
   top: 20px;
   left: 0px;
-  opacity: 0.25;
+  opacity: 0.4;
   mask-image: radial-gradient(rgb(0,0,0,0.85), rgb(0,0,0,0));
 }
 
@@ -103,7 +103,7 @@
   /* transform: scale(1.25)!important; --- TRANSFORMATION REQUIRED ANTIALIASING FOR TEXT WITCH CAUSED ERROR with 3d ON MOBILE --- */
   color: rgba(255, 255, 255, 1)!important;
   border-radius: 0.2rem!important;
-  border-color: rgba(255, 255, 255, 0.75)!important;
+  border-color: rgba(255, 255, 255, 1)!important;
   background-color: rgba(255, 255, 255, 0)!important;
   /* WENT FOR BORDER RADIUS TRANSFORM LOOKS COOL SO GOOD */
 }
@@ -132,7 +132,7 @@
   cursor: pointer;
 }
 .play-cube:hover {
-  animation: play-cube-spin 500ms steps(1000);
+  animation: play-cube-spin 500ms steps(500);
 }
 @media only screen and (max-width: 450px) {
   .play-cube:hover {
@@ -141,12 +141,11 @@
 }
 .play-cube:focus, .play-cube:active {
   outline: none!important;
-  color: white!important;
 }
 @keyframes play-cube-spin {
-  from {transform: rotate(0deg) scale(1); margin-bottom: 0px;}
-  50% {transform: rotate(180deg) scale(1.8); margin-bottom: 20px;}
-  to {transform: rotate(360deg) scale(1); margin-bottom: 0px;}
+  from {transform: rotate(0deg) scale(1); margin-bottom: 0px; margin-left: 0px;}
+  50% {transform: rotate(180deg) scale(1.8); margin-bottom: 20px; margin-left: 10px;}
+  to {transform: rotate(360deg) scale(1); margin-bottom: 0px; margin-left: 0px;}
 }
 
 /* --- sign */
@@ -162,4 +161,24 @@
   font-weight: bolder;
   /* backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased; */
+}
+
+/* --- dark mode toggle */
+
+#dark-mode {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  cursor: pointer;
+  transition: 0.15s ;
+}
+#dark-mode:hover {
+  bottom: 45px;
+}
+.sun {
+  color: white;
+}
+.moon {
+  color: black;
 }

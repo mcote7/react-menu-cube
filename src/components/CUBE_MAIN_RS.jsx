@@ -10,7 +10,8 @@ import CUBE_SIDE_ITEM from './cube-faces/CUBE_SIDE_ITEM';
 const CUBE_MAIN_RS = () => {
   
   const state = useRS({
-    currentClass: 'menu'
+    currentClass: 'menu',
+    darkMode: true,
   });
 
   // -- CHANGE SIDES --->
@@ -38,15 +39,17 @@ const CUBE_MAIN_RS = () => {
     // console.log({ALL_BUTTONS})
     const play = document.getElementById('play');
     const sign = document.getElementById('sign');
+    const dark_mode = document.getElementById('dark-mode');
 
     for(let i = 0; i < ALL_BUTTONS.length; i++) {
       // console.log('n',button[i])
       if(ALL_BUTTONS[i].value === state.currentClass) {
         ALL_BUTTONS[i].style.backgroundColor = CUBE_FACE_backgroundColor;
-        ALL_BUTTONS[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
+        ALL_BUTTONS[i].style.borderColor = 'rgba(255, 255, 255, 1)';
         ALL_BUTTONS[i].style.color = 'rgba(255, 255, 255, 1)';
         play.style.color = CUBE_FACE_backgroundColor;
         sign.style.color = CUBE_FACE_backgroundColor;
+        dark_mode.style.color = CUBE_FACE_backgroundColor;
       }
       else {
         ALL_BUTTONS[i].style.backgroundColor = BUTTON_defaultBackgroundColor;
@@ -58,32 +61,45 @@ const CUBE_MAIN_RS = () => {
 
   // -- PLAY CUBE --->
   const playCube = () => {
+
     const play = document.getElementById('play');
-    play.style.color = 'white';
     const sign = document.getElementById('sign');
+    const dark_mode = document.getElementById('dark-mode');
+
+    if(state.darkMode) {
+    play.style.color = 'white';
     sign.style.color = 'white';
+    dark_mode.style.color = 'white';
+    }
+    else {
+      play.style.color = 'black';
+      sign.style.color = 'black';
+      dark_mode.style.color = 'black';
+    }
+
     play.animate([
       {transform: 'rotate(0deg) scale(1)', marginBottom: '0px', marginLeft: '0px'},
       {transform: 'rotate(180deg)'},
-      {transform: 'rotate(360deg) scale(2.5)', marginBottom: '60vh', marginLeft: '20px'},
+      {transform: 'rotate(360deg) scale(2.5)', marginBottom: '60vh', marginLeft: '40px'},
       {transform: 'rotate(180deg)'},
       {transform: 'rotate(0deg) scale(1)', marginBottom: '0px', marginLeft: '0px'},
     ], {
       duration: 1500,
-      easing: 'steps(1000)'
+      easing: 'steps(1500)'
     });
-    setTimeout(() => {
-      const classes = ['menu', 'right', 'back', 'left', 'top', 'bottom'];
-        for(let i = 0; i < classes.length; i++) {
-        setTimeout(() => {
-          state.currentClass = classes[i];
-          // console.log('classes[i]',classes[i])
-        }, i * 1250);
-      }
-    }, 250);
+
+
+    const classes = ['menu', 'right', 'back', 'left', 'top', 'bottom'];
+      for(let i = 0; i < classes.length; i++) {
+      setTimeout(() => {
+        state.currentClass = classes[i];
+        // console.log('classes[i]',classes[i])
+      }, i * 1200);
+    }
+
     setTimeout(() => {
       state.currentClass = 'menu';
-    }, 7750);
+    }, 7700);
     // console.log("done!")
   };
 
@@ -93,10 +109,26 @@ const CUBE_MAIN_RS = () => {
   },[]);// eslint-disable-line
   // -- LINTER DISSABLED FOR RADIOACTIVE STATE -
 
+  // -- DARKMODE TOGGLE --->
+  useEffect(()=>{
+    const H20 = document.getElementById('water');
+    const scene = document.getElementById('scene');
+    if(state.darkMode) {
+      document.body.style.backgroundColor = 'black';
+      H20.style.opacity = 0.4;
+      scene.style.webkitBoxReflect = 'below 20px linear-gradient( to bottom, transparent, rgba(255, 255, 255, 0.3))';
+    }
+    else {
+      document.body.style.backgroundColor = 'white';
+      H20.style.opacity = 0;
+      scene.style.webkitBoxReflect = 'below 20px linear-gradient( to bottom, transparent, rgba(255, 255, 255, 0.6))';
+    }
+  },[state.darkMode])
+
   return (<>
     <div className="row mt-5">
       <div className="col">
-        <div className="scene m-auto">
+        <div id='scene' className="scene m-auto">
           <div className={`cube show-${state.currentClass}`}>
             <CUBE_FRONT_MENU handleItemSelect={handleItemSelect}/>
             <CUBE_SIDE_ITEM side={'back'} handleItemSelect={handleItemSelect}/>
@@ -105,14 +137,21 @@ const CUBE_MAIN_RS = () => {
             <CUBE_SIDE_ITEM side={'top'} handleItemSelect={handleItemSelect}/>
             <CUBE_SIDE_ITEM side={'bottom'} handleItemSelect={handleItemSelect}/>
           </div>
-          <div className="water"></div>
+          <div id="water" className="water"></div>
         </div>
       </div>
     </div>
-    <div onClick={playCube} className="play-cube">
-      <span id="play"><i className="fa fa-cube fa-2x" aria-hidden="true"></i></span>
+    <div id="play" onClick={playCube} className="play-cube">
+      <span><i className="fa fa-cube fa-3x" aria-hidden="true"></i></span>
     </div>
     <div id="sign">Michael Cote 2021</div>
+    <div onClick={()=>{state.darkMode = !state.darkMode}}>
+      <span>
+        {state.darkMode ?
+          <i id="dark-mode" className="fa fa-sun-o fa-2x sun" aria-hidden="true"></i>
+          : <i id="dark-mode" className="fa fa-moon-o fa-2x moon" aria-hidden="true"></i>}
+      </span>
+    </div>
   </>);
 };
 export default CUBE_MAIN_RS;
