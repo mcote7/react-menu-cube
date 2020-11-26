@@ -1,3 +1,9 @@
+# LAST CHANGES 11/25 - 
+
+VARIABLE NAMES UPDATED
+
+ANIMATE BORDER OF BUTTONS ON HOV:ACTIVE FROM CIRCLE/SQUARE
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

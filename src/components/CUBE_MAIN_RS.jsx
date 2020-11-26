@@ -21,39 +21,37 @@ const CUBE_MAIN_RS = () => {
     // console.log("2",state.currentClass)
   };
 
-  // -- CHANGE COLORs --->
+  // -- CHANGE COLORS ON CLASS CHANGE --->
   useEffect(()=>{
 
-    const defaultColor = 'rgba(255, 255, 255, 0.2)';
-    const defaultBorderColor = 'rgba(255, 255, 255, 0.3)';
-    const defaultTextColor = 'rgba(255, 255, 255,1)';
+    const BUTTON_defaultBackgroundColor = 'rgba(255, 255, 255, 0.2)';
+    const BUTTON_defaultBorderColor = 'rgba(255, 255, 255, 0.3)';
+    const BUTTON_defaultTextColor = 'rgba(255, 255, 255, 0.5)';
 
-    const target = document.getElementsByClassName(`cube__face--${state.currentClass}`)[0];
-    // console.log({target})
-    const style = window.getComputedStyle(target);
-    // console.log({style})
-    const color = style.getPropertyValue('background-color').replace('0.7', '1');
-    // console.log({color})
-    const button = document.getElementsByClassName('menu_button');
-    // console.log({button})
+    const CUBE_FACE_target = document.getElementsByClassName(`cube__face--${state.currentClass}`)[0];
+    // console.log({CUBE_FACE_target})
+    const CUBE_FACE_style = window.getComputedStyle(CUBE_FACE_target);
+    // console.log({CUBE_FACE_style})
+    const CUBE_FACE_backgroundColor = CUBE_FACE_style.getPropertyValue('background-color').replace('0.7', '1');
+    // console.log({CUBE_FACE_backgroundColor})
+    const ALL_BUTTONS = document.getElementsByClassName('menu_button');
+    // console.log({ALL_BUTTONS})
     const play = document.getElementById('play');
     const sign = document.getElementById('sign');
 
-    for(let i = 0; i < button.length; i++) {
+    for(let i = 0; i < ALL_BUTTONS.length; i++) {
       // console.log('n',button[i])
-      if(button[i].value === state.currentClass) {
-        // button[i].style.transform = 'scale(1.25)';
-        button[i].style.backgroundColor = color;
-        button[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
-        button[i].style.color = 'rgba(0,0,0,1)';
-        play.style.color = color;
-        sign.style.color = color;
+      if(ALL_BUTTONS[i].value === state.currentClass) {
+        ALL_BUTTONS[i].style.backgroundColor = CUBE_FACE_backgroundColor;
+        ALL_BUTTONS[i].style.borderColor = 'rgba(255, 255, 255, 0.75)';
+        ALL_BUTTONS[i].style.color = 'rgba(255, 255, 255, 1)';
+        play.style.color = CUBE_FACE_backgroundColor;
+        sign.style.color = CUBE_FACE_backgroundColor;
       }
       else {
-        // button[i].style.transform = 'scale(1)';
-        button[i].style.backgroundColor = defaultColor;
-        button[i].style.borderColor = defaultBorderColor;
-        button[i].style.color = defaultTextColor;
+        ALL_BUTTONS[i].style.backgroundColor = BUTTON_defaultBackgroundColor;
+        ALL_BUTTONS[i].style.borderColor = BUTTON_defaultBorderColor;
+        ALL_BUTTONS[i].style.color = BUTTON_defaultTextColor;
       }
     }
   },[state.currentClass]);
@@ -65,9 +63,11 @@ const CUBE_MAIN_RS = () => {
     const sign = document.getElementById('sign');
     sign.style.color = 'white';
     play.animate([
-      {transform: 'rotate(0deg) scale(1)', marginBottom: '0px'},
-      {transform: 'rotate(180deg) scale(2)', marginBottom: '150px'},
-      {transform: 'rotate(360deg) scale(1)', marginBottom: '0px'},
+      {transform: 'rotate(0deg) scale(1)', marginBottom: '0px', marginLeft: '0px'},
+      {transform: 'rotate(180deg)'},
+      {transform: 'rotate(360deg) scale(2.5)', marginBottom: '60vh', marginLeft: '20px'},
+      {transform: 'rotate(180deg)'},
+      {transform: 'rotate(0deg) scale(1)', marginBottom: '0px', marginLeft: '0px'},
     ], {
       duration: 1500,
       easing: 'steps(1000)'
