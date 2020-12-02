@@ -127,6 +127,35 @@ const CUBE_MAIN_RS = () => {
     // console.log("done!")
   };
 
+  // TIME --->
+  const timeTravel = () => {
+    const scene = document.getElementById('scene');
+    scene.style.perspective = '1px';
+    const timeIcon = document.getElementById('time');
+    timeIcon.animate([
+      {bottom: '45px', transform: 'scale(1) rotate(0deg)'},
+      {bottom: '65px', transform: 'scale(2) rotate(-360deg)'},
+      {bottom: '45px', transform: 'scale(1) rotate(0deg)'}
+    ],{
+        duration: 8250
+    })
+    scene.animate([
+      {transform: 'scale(1)'},
+      {transform: 'scale(0.2)'},
+      {transform: 'scale(2.2)'},
+      {transform: 'scale(1)'},
+    ],{
+      duration: 10755,
+      easing: 'steps(10755)'
+    })
+    setTimeout(() => {
+      playCube();
+    }, 1000);
+    setTimeout(() => {
+      scene.style.perspective = '300px';
+    }, 8760);
+  };
+
 
   // -- OPENING ENTERANCE --->
   useEffect(()=>{
@@ -138,15 +167,18 @@ const CUBE_MAIN_RS = () => {
   useEffect(()=>{
     const H20 = document.getElementById('water');
     const scene = document.getElementById('scene');
+    const timeIcon = document.getElementById('time');
     if(state.darkMode) {
       document.body.style.backgroundColor = 'black';
       H20.style.opacity = 0.4;
       scene.style.webkitBoxReflect = 'below 20px linear-gradient( to bottom, transparent, rgba(255, 255, 255, 0.3))';
+      timeIcon.style.color = 'white';
     }
     else {
       document.body.style.backgroundColor = 'white';
       H20.style.opacity = 0;
       scene.style.webkitBoxReflect = 'below 20px linear-gradient( to bottom, transparent, rgba(255, 255, 255, 0.6))';
+      timeIcon.style.color = 'black';
     }
   },[state.darkMode])
 
@@ -176,6 +208,9 @@ const CUBE_MAIN_RS = () => {
           <i id="dark-mode" className="fa fa-sun-o fa-2x sun" aria-hidden="true"></i>
           : <i id="dark-mode" className="fa fa-moon-o fa-2x moon" aria-hidden="true"></i>}
       </span>
+    </div>
+    <div id="time" onClick={timeTravel}>
+      <span><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></span>
     </div>
   </>);
 };

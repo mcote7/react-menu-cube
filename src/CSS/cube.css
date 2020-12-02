@@ -163,7 +163,6 @@
 }
 
 /* --- dark mode toggle */
-
 #dark-mode {
   display: flex;
   position: absolute;
@@ -180,4 +179,18 @@
 }
 .moon {
   color: black;
+}
+
+/* --- time travel --- */
+#time {
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  right: 104px;
+  cursor: pointer;
+  color: white;
+  transition: 0.15s ;
+}
+#time:hover {
+  bottom: 45px;
 }
