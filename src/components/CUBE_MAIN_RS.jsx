@@ -17,9 +17,16 @@ const CUBE_MAIN_RS = () => {
 
   // -- CHANGE SIDES --->
   const handleItemSelect = (e) => {
+    if(e.target.className.includes('fa')) {
+      console.log("targ", e.target)
+      console.log("targ_parent_val", e.target.parentNode.value)
+      state.currentClass = e.target.parentNode.value;
+    } else {
+      console.log('reg', e.target.value)
+      state.currentClass = e.target.value;
+    }
     // console.log("1",state.currentClass)
     // console.log("next",e.target.value)
-    state.currentClass = e.target.value;
     // console.log("2",state.currentClass)
   };
 
@@ -53,7 +60,7 @@ const CUBE_MAIN_RS = () => {
       default:
         CUBE_FACE_backgroundColor = 'hsla(  0, 100%, 50%, 1)';
     }
-    console.log({CUBE_FACE_backgroundColor})
+    // console.log({CUBE_FACE_backgroundColor})
     
     const ALL_BUTTONS = document.getElementsByClassName('menu_button');
     // console.log({ALL_BUTTONS})
@@ -210,7 +217,7 @@ const CUBE_MAIN_RS = () => {
       </span>
     </div>
     <div id="time" onClick={timeTravel}>
-      <span><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></span>
+      <span><i className="fa fa-clock-o fa-2x" aria-hidden="true"></i></span>
     </div>
   </>);
 };

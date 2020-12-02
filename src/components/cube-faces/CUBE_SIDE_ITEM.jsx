@@ -7,7 +7,7 @@ const CUBE_SIDE_ITEM = ({side, handleItemSelect}) => {
         <span>
           <button onClick={(e)=>handleItemSelect(e)}
             className="m-3 menu_button" name="rotate-cube-side" value="menu">
-            <span><i className="fa fa-cubes fa-2x" aria-hidden="true"></i></span>
+            <i onClick={(e)=>handleItemSelect(e)} className="fa fa-cubes fa-2x" aria-hidden="true"></i>
           </button>
         </span>
       </div>
