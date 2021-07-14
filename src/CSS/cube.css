@@ -125,7 +125,7 @@
 
 .play-cube {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 20px;
   cursor: pointer;
@@ -153,7 +153,7 @@
   -webkit-user-select: none;
   user-select: none;
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   font-size: small;
@@ -165,7 +165,7 @@
 /* --- dark mode toggle */
 #dark-mode {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   right: 20px;
   cursor: pointer;
@@ -184,7 +184,7 @@
 /* --- time travel --- */
 #time {
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   right: 104px;
   cursor: pointer;
