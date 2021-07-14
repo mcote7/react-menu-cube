@@ -11,8 +11,9 @@
   position: relative;
   animation: present-cube 7750ms ease-out;
 }
+
 @keyframes present-cube {
-  0% {opacity: 0; transform: scale(0); filter: blur(12px);}
+  0% {opacity: 0; transform: scale(0); filter: blur(24px);}
   50% {filter: blur(0px);}
   100% {opacity: 1; transform: scale(1);}
 }
@@ -94,9 +95,6 @@
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.5);
-  /* backface-visibility: hidden; */
-  /* -webkit-font-smoothing: subpixel-antialiased; */
-  /* will-change: transform; */
   transition: 0.75s;
 }
 .menu_button:hover {
@@ -105,7 +103,6 @@
   border-radius: 0.2rem!important;
   border-color: rgba(255, 255, 255, 1)!important;
   background-color: rgba(255, 255, 255, 0)!important;
-  /* WENT FOR BORDER RADIUS TRANSFORM LOOKS COOL SO GOOD */
 }
 .menu_button:focus, .menu_button:active {
   outline: none!important;
